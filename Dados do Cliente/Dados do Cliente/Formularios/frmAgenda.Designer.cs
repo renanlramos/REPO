@@ -49,18 +49,18 @@
             this.label10 = new System.Windows.Forms.Label();
             this.mskCelular = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.errError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tstSalvar = new System.Windows.Forms.ToolStripButton();
-            this.tstExcluir = new System.Windows.Forms.ToolStripButton();
-            this.tstPesquisar = new System.Windows.Forms.ToolStripButton();
-            this.tstSair = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.btnCEP = new System.Windows.Forms.Button();
+            this.errError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.tstMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tstdSalvar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tstbExcluir = new System.Windows.Forms.ToolStripMenuItem();
+            this.tstbPesquisar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tstSair = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errError)).BeginInit();
+            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -72,6 +72,7 @@
             this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Código";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtCodigo
             // 
@@ -81,6 +82,7 @@
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(100, 22);
             this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lblNome
             // 
@@ -266,80 +268,7 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Cliente";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstSalvar,
-            this.tstExcluir,
-            this.tstPesquisar,
-            this.toolStripSeparator1,
-            this.tstSair,
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(819, 39);
-            this.toolStrip1.TabIndex = 21;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
-            // errError
-            // 
-            this.errError.ContainerControl = this;
-            // 
-            // tstSalvar
-            // 
-            this.tstSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tstSalvar.Image = ((System.Drawing.Image)(resources.GetObject("tstSalvar.Image")));
-            this.tstSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tstSalvar.Name = "tstSalvar";
-            this.tstSalvar.Size = new System.Drawing.Size(42, 36);
-            this.tstSalvar.Text = "&Salvar";
-            this.tstSalvar.Click += new System.EventHandler(this.tstSalvar_Click);
-            // 
-            // tstExcluir
-            // 
-            this.tstExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tstExcluir.Image = ((System.Drawing.Image)(resources.GetObject("tstExcluir.Image")));
-            this.tstExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tstExcluir.Name = "tstExcluir";
-            this.tstExcluir.Size = new System.Drawing.Size(45, 36);
-            this.tstExcluir.Text = "&Excluir";
-            this.tstExcluir.Click += new System.EventHandler(this.tstExcluir_Click);
-            // 
-            // tstPesquisar
-            // 
-            this.tstPesquisar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tstPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("tstPesquisar.Image")));
-            this.tstPesquisar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tstPesquisar.Name = "tstPesquisar";
-            this.tstPesquisar.Size = new System.Drawing.Size(61, 36);
-            this.tstPesquisar.Text = "&Pesquisar";
-            this.tstPesquisar.Click += new System.EventHandler(this.tstPesquisar_Click);
-            // 
-            // tstSair
-            // 
-            this.tstSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tstSair.Image = ((System.Drawing.Image)(resources.GetObject("tstSair.Image")));
-            this.tstSair.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tstSair.Name = "tstSair";
-            this.tstSair.Size = new System.Drawing.Size(30, 36);
-            this.tstSair.Text = "S&air";
-            this.tstSair.Click += new System.EventHandler(this.tstSair_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnCEP
             // 
@@ -351,12 +280,76 @@
             this.btnCEP.UseVisualStyleBackColor = true;
             this.btnCEP.Click += new System.EventHandler(this.btnCEP_Click);
             // 
+            // errError
+            // 
+            this.errError.ContainerControl = this;
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tstMenu,
+            this.toolStripSeparator1,
+            this.tstSair});
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(819, 25);
+            this.toolStrip.TabIndex = 22;
+            this.toolStrip.Text = "toolStrip2";
+            // 
+            // tstMenu
+            // 
+            this.tstMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tstMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tstdSalvar,
+            this.tstbExcluir,
+            this.tstbPesquisar});
+            this.tstMenu.Image = ((System.Drawing.Image)(resources.GetObject("tstMenu.Image")));
+            this.tstMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tstMenu.Name = "tstMenu";
+            this.tstMenu.Size = new System.Drawing.Size(51, 22);
+            this.tstMenu.Text = "Menu";
+            this.tstMenu.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
+            // 
+            // tstdSalvar
+            // 
+            this.tstdSalvar.Name = "tstdSalvar";
+            this.tstdSalvar.Size = new System.Drawing.Size(124, 22);
+            this.tstdSalvar.Text = "&Salvar";
+            this.tstdSalvar.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
+            // 
+            // tstbExcluir
+            // 
+            this.tstbExcluir.Name = "tstbExcluir";
+            this.tstbExcluir.Size = new System.Drawing.Size(124, 22);
+            this.tstbExcluir.Text = "&Excluir";
+            // 
+            // tstbPesquisar
+            // 
+            this.tstbPesquisar.Name = "tstbPesquisar";
+            this.tstbPesquisar.Size = new System.Drawing.Size(124, 22);
+            this.tstbPesquisar.Text = "&Pesquisar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tstSair
+            // 
+            this.tstSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tstSair.Image = ((System.Drawing.Image)(resources.GetObject("tstSair.Image")));
+            this.tstSair.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tstSair.Name = "tstSair";
+            this.tstSair.Size = new System.Drawing.Size(30, 22);
+            this.tstSair.Text = "Sair";
+            this.tstSair.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 368);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.groupBox1);
             this.KeyPreview = true;
             this.Name = "frmAgenda";
@@ -366,9 +359,9 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmAgenda_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errError)).EndInit();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,14 +388,14 @@
         private System.Windows.Forms.MaskedTextBox mskCelular;
         private System.Windows.Forms.Button btnCEP;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tstSalvar;
-        private System.Windows.Forms.ToolStripButton tstExcluir;
-        private System.Windows.Forms.ToolStripButton tstPesquisar;
+        private System.Windows.Forms.ErrorProvider errError;
+        private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStripDropDownButton tstMenu;
+        private System.Windows.Forms.ToolStripMenuItem tstdSalvar;
+        private System.Windows.Forms.ToolStripMenuItem tstbExcluir;
+        private System.Windows.Forms.ToolStripMenuItem tstbPesquisar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tstSair;
-        private System.Windows.Forms.ErrorProvider errError;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

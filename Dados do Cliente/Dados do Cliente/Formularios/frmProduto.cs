@@ -16,5 +16,20 @@ namespace Dados_do_Cliente.Formularios
         {
             InitializeComponent();
         }
+
+        private void txtbPreco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void grpbCadastroDeProdutos_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
