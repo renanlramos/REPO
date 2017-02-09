@@ -12,6 +12,8 @@ namespace Dados_do_Cliente.Formularios
 {
     public partial class frmProduto : Form
     {
+        private object errError;
+
         public frmProduto()
         {
             InitializeComponent();
@@ -30,6 +32,39 @@ namespace Dados_do_Cliente.Formularios
         private void grpbCadastroDeProdutos_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void tstLimpar_Click(object sender, EventArgs e)
+        {
+            txtbCodigo.Text = (" ");
+            txtbDescricao.Text = (" ");
+            txtbMarca.Text = (" ");
+            mskData.Text = (" ");
+            mskPreco.Text = (" ");
+        }
+
+        private void tstdSalvar_Click(object sender, EventArgs e)
+        {          
+        }
+
+        private void tstSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void mskPreco_Click(object sender, EventArgs e)
+        {
+            mskPreco.SelectionStart = 0;
+        }
+
+        private void mskData_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mskData_Click(object sender, EventArgs e)
+        {
+           mskData.SelectionStart = 0;
         }
     }
 }

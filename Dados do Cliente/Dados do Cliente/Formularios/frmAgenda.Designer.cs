@@ -58,6 +58,8 @@
             this.tstbPesquisar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tstSair = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tstLimpar = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errError)).BeginInit();
             this.toolStrip.SuspendLayout();
@@ -122,6 +124,9 @@
             this.mskCEP.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.mskCEP.Size = new System.Drawing.Size(100, 22);
             this.mskCEP.TabIndex = 2;
+            this.mskCEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCEP_MaskInputRejected);
+            this.mskCEP.Click += new System.EventHandler(this.mskCEP_Click);
+            this.mskCEP.Enter += new System.EventHandler(this.mskCEP_Enter);
             // 
             // label5
             // 
@@ -239,6 +244,7 @@
             this.mskCelular.Name = "mskCelular";
             this.mskCelular.Size = new System.Drawing.Size(124, 22);
             this.mskCelular.TabIndex = 9;
+            this.mskCelular.Click += new System.EventHandler(this.mskCelular_Click);
             // 
             // groupBox1
             // 
@@ -262,7 +268,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtNumero);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 87);
+            this.groupBox1.Location = new System.Drawing.Point(12, 38);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(771, 226);
             this.groupBox1.TabIndex = 20;
@@ -289,7 +295,9 @@
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tstMenu,
             this.toolStripSeparator1,
-            this.tstSair});
+            this.tstSair,
+            this.toolStripSeparator2,
+            this.tstLimpar});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(819, 25);
@@ -313,20 +321,20 @@
             // tstdSalvar
             // 
             this.tstdSalvar.Name = "tstdSalvar";
-            this.tstdSalvar.Size = new System.Drawing.Size(124, 22);
+            this.tstdSalvar.Size = new System.Drawing.Size(152, 22);
             this.tstdSalvar.Text = "&Salvar";
             this.tstdSalvar.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
             // tstbExcluir
             // 
             this.tstbExcluir.Name = "tstbExcluir";
-            this.tstbExcluir.Size = new System.Drawing.Size(124, 22);
+            this.tstbExcluir.Size = new System.Drawing.Size(152, 22);
             this.tstbExcluir.Text = "&Excluir";
             // 
             // tstbPesquisar
             // 
             this.tstbPesquisar.Name = "tstbPesquisar";
-            this.tstbPesquisar.Size = new System.Drawing.Size(124, 22);
+            this.tstbPesquisar.Size = new System.Drawing.Size(152, 22);
             this.tstbPesquisar.Text = "&Pesquisar";
             // 
             // toolStripSeparator1
@@ -344,11 +352,26 @@
             this.tstSair.Text = "Sair";
             this.tstSair.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tstLimpar
+            // 
+            this.tstLimpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tstLimpar.Image = ((System.Drawing.Image)(resources.GetObject("tstLimpar.Image")));
+            this.tstLimpar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tstLimpar.Name = "tstLimpar";
+            this.tstLimpar.Size = new System.Drawing.Size(110, 22);
+            this.tstLimpar.Text = "Limpar os Campos";
+            this.tstLimpar.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 368);
+            this.ClientSize = new System.Drawing.Size(819, 271);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.groupBox1);
             this.KeyPreview = true;
@@ -396,6 +419,8 @@
         private System.Windows.Forms.ToolStripMenuItem tstbPesquisar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tstSair;
+        private System.Windows.Forms.ToolStripButton tstLimpar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

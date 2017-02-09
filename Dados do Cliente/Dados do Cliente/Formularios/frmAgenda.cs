@@ -135,5 +135,35 @@ namespace Dados_do_Cliente
         {
 
         }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            txtBairro.Text = (" ");
+            txtCidade.Text = (" ");
+            txtCodigo.Text = (" ");
+            txtEndereco.Text = (" ");
+            txtNome.Text = (" ");
+            txtNumero.Text = (" ");
+            mskCelular.Text = (" ");
+            mskCEP.Text = (" ");
+        }
+
+        private void mskCEP_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+        }
+
+        private void mskCEP_Click(object sender, EventArgs e)
+        {
+            mskCEP.SelectionStart = 0;
+        }
+
+        private void mskCEP_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void mskCelular_Click(object sender, EventArgs e)
+        {
+            mskCelular.SelectionStart = 0;
+        }
     }
 }
