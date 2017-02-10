@@ -119,6 +119,25 @@ namespace Dados_do_Cliente
                     errError.SetError(lblNome, "");
                 }
             }
+
+            {
+                clClientes clClientes = new clClientes();
+
+                clClientes.cliNome = txtNome.Text;
+                clClientes.cliEndereco = txtEndereco.Text;
+                clClientes.cliNumero = txtNumero.Text;
+                clClientes.cliBairro = txtBairro.Text;
+                clClientes.cliCidade = txtCidade.Text;
+                clClientes.cliEstado = cboEstado.Text;
+                clClientes.cliCEP = mskCEP.Text;
+                clClientes.cliCelular = mskCelular.Text;
+
+                clClientes.banco = Properties.Settings.Default.conexaoDB;
+
+                clClientes.Gravar();
+
+                MessageBox.Show("Cliente Incluído com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
