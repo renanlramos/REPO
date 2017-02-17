@@ -61,7 +61,7 @@ namespace Negocio
                 FechaBanco(conn);
             }
         }
+              
     }
-
 }
 
