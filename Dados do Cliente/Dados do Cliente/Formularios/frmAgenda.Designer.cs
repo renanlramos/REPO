@@ -42,6 +42,10 @@
             this.tstLimpar = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.cboOpcao = new System.Windows.Forms.ComboBox();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.lblOpcao = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -63,16 +67,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.lblOpcao = new System.Windows.Forms.Label();
-            this.lblFiltro = new System.Windows.Forms.Label();
-            this.cboOpcao = new System.Windows.Forms.ComboBox();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errError)).BeginInit();
             this.toolStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // errError
@@ -110,20 +112,20 @@
             // tstdSalvar
             // 
             this.tstdSalvar.Name = "tstdSalvar";
-            this.tstdSalvar.Size = new System.Drawing.Size(152, 22);
+            this.tstdSalvar.Size = new System.Drawing.Size(124, 22);
             this.tstdSalvar.Text = "&Salvar";
             this.tstdSalvar.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
             // tstbExcluir
             // 
             this.tstbExcluir.Name = "tstbExcluir";
-            this.tstbExcluir.Size = new System.Drawing.Size(152, 22);
+            this.tstbExcluir.Size = new System.Drawing.Size(124, 22);
             this.tstbExcluir.Text = "&Excluir";
             // 
             // tstbPesquisar
             // 
             this.tstbPesquisar.Name = "tstbPesquisar";
-            this.tstbPesquisar.Size = new System.Drawing.Size(152, 22);
+            this.tstbPesquisar.Size = new System.Drawing.Size(124, 22);
             this.tstbPesquisar.Text = "&Pesquisar";
             // 
             // toolStripSeparator1
@@ -168,6 +170,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dgvClientes);
             this.tabPage1.Controls.Add(this.txtFiltro);
             this.tabPage1.Controls.Add(this.cboOpcao);
             this.tabPage1.Controls.Add(this.lblFiltro);
@@ -179,6 +182,45 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pesquisar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(103, 24);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(672, 20);
+            this.txtFiltro.TabIndex = 4;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            // 
+            // cboOpcao
+            // 
+            this.cboOpcao.FormattingEnabled = true;
+            this.cboOpcao.Items.AddRange(new object[] {
+            "NOME",
+            "CODIGO",
+            "CELULAR"});
+            this.cboOpcao.Location = new System.Drawing.Point(10, 24);
+            this.cboOpcao.Name = "cboOpcao";
+            this.cboOpcao.Size = new System.Drawing.Size(63, 21);
+            this.cboOpcao.TabIndex = 3;
+            this.cboOpcao.Text = "NOME";
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(100, 7);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(29, 13);
+            this.lblFiltro.TabIndex = 2;
+            this.lblFiltro.Text = "Filtro";
+            // 
+            // lblOpcao
+            // 
+            this.lblOpcao.AutoSize = true;
+            this.lblOpcao.Location = new System.Drawing.Point(7, 7);
+            this.lblOpcao.Name = "lblOpcao";
+            this.lblOpcao.Size = new System.Drawing.Size(39, 13);
+            this.lblOpcao.TabIndex = 1;
+            this.lblOpcao.Text = "Opção";
             // 
             // tabPage2
             // 
@@ -403,43 +445,13 @@
             this.txtNumero.Size = new System.Drawing.Size(78, 22);
             this.txtNumero.TabIndex = 5;
             // 
-            // lblOpcao
+            // dgvClientes
             // 
-            this.lblOpcao.AutoSize = true;
-            this.lblOpcao.Location = new System.Drawing.Point(7, 7);
-            this.lblOpcao.Name = "lblOpcao";
-            this.lblOpcao.Size = new System.Drawing.Size(39, 13);
-            this.lblOpcao.TabIndex = 1;
-            this.lblOpcao.Text = "Opção";
-            // 
-            // lblFiltro
-            // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(100, 7);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(29, 13);
-            this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Filtro";
-            // 
-            // cboOpcao
-            // 
-            this.cboOpcao.FormattingEnabled = true;
-            this.cboOpcao.Items.AddRange(new object[] {
-            "NOME",
-            "CODIGO",
-            "CELULAR"});
-            this.cboOpcao.Location = new System.Drawing.Point(10, 24);
-            this.cboOpcao.Name = "cboOpcao";
-            this.cboOpcao.Size = new System.Drawing.Size(63, 21);
-            this.cboOpcao.TabIndex = 3;
-            this.cboOpcao.Text = "NOME";
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Location = new System.Drawing.Point(103, 24);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(672, 20);
-            this.txtFiltro.TabIndex = 4;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(10, 51);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(765, 179);
+            this.dgvClientes.TabIndex = 5;
             // 
             // frmAgenda
             // 
@@ -463,6 +475,7 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,6 +519,7 @@
         private System.Windows.Forms.ComboBox cboOpcao;
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.Label lblOpcao;
+        private System.Windows.Forms.DataGridView dgvClientes;
     }
 }
 

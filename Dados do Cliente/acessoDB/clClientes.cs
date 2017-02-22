@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
+using System.Data.SqlClient;
 namespace Negocio
 {
     public class clClientes
@@ -103,6 +104,42 @@ namespace Negocio
             clAcessoDB clAcessoDB = new clAcessoDB();
             clAcessoDB.vConexao = banco;
             clAcessoDB.ExecutaComando(strQuery.ToString());
+        }
+
+        public DataSet Pesquisar(string Campo, string Filtro)
+        {
+            StringBuilder strQuery = new StringBuilder();
+
+            //montagem do select
+            strQuery.Append(" SELECT * ");
+            strQuery.Append(" FROM tbClientes ");
+            if (Campo != string.Empty && Filtro != string.Empty)
+            {
+                strQuery.Append(" WHERE ");
+                strQuery.Append(Campo + " LIKE '" + "%" + Filtro + "%" + "'");
+            }
+            strQuery.Append(" ORDER BY cliNome ");
+
+            //executa o comando
+            clAcessoDB clAcessoDB = new clAcessoDB();
+            clAcessoDB.vConexao = banco;
+            return clAcessoDB.RetornaDataSet(strQuery.ToString());
+        }
+
+        public SqlDataReader PesquisarCodigo(int cliCodigo)
+        {
+            StringBuilder strQuery = new StringBuilder();
+
+            //montagem do select
+            strQuery.Append(" SELECT ");
+            strQuery.Append(" FROM tbClientes ");
+            strQuery.Append(" WHERE ");
+            strQuery.Append(" cliCodigo = " + cliCodigo);
+
+            //executa o comando
+            clAcessoDB clAcessoDB = new clAcessoDB();
+            clAcessoDB.vConexao = banco;
+            return clAcessoDB.RetornaDataReader(strQuery.ToString());
         }
     }
 }

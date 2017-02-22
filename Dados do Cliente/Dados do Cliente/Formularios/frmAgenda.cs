@@ -20,7 +20,7 @@ namespace Dados_do_Cliente
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Pesquisar();
         }
        
         private void btnCEP_Click(object sender, EventArgs e)
@@ -183,6 +183,37 @@ namespace Dados_do_Cliente
         private void mskCelular_Click(object sender, EventArgs e)
         {
             mskCelular.SelectionStart = 0;
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            Pesquisar();
+        }
+
+        private void Pesquisar()
+        {
+            string campo = "";
+
+            //seleciona o campo de pesquisa
+            if (cboOpcao.Text == "CÓDIGO")
+            {
+                campo = "cliCodigo";
+            }
+            else if (cboOpcao.Text == "NOME")
+            {
+                campo = "cliNome";
+            }
+            else if (cboOpcao.Text == "CELULAR")
+            {
+                campo = "cliCelular";
+            }
+            //carrega o datagridviwe com os clientes cadastrados
+            clClientes clClientes = new clClientes();
+            clClientes.banco = Properties.Settings.Default.conexaoDB;
+            dgvClientes.DataSource = clClientes.Pesquisar(campo, txtFiltro.Text).Tables[0];
+
+            //comando utilizado para gerar um efeito "zebrado" no datagridview
+            dgvClientes.AlternatingRowsDefaultCellStyle.BackColor = Color.Green;
         }
     }
 }
