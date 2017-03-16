@@ -50,8 +50,7 @@
         <p style="text-align: center">
             &nbsp;</p>
         <p style="text-align: center">
-            <asp:Label ID="Label1" runat="server" style="font-weight: 700; font-style: italic" Text="Desenvolvido por Renan Ramos"></asp:Label>
-        </p>
+            &nbsp;</p>
     
     </div>
     </form>

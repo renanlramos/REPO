@@ -1,0 +1,12 @@
+﻿body {
+    background-color: gray;
+}
+
+#lblHead2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+#hplCadastrarPost {
+    text-align: center;
+}

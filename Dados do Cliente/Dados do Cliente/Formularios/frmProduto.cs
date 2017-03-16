@@ -12,7 +12,6 @@ namespace Dados_do_Cliente.Formularios
 {
     public partial class frmProduto : Form
     {
-        private object errError;
 
         public frmProduto()
         {
@@ -65,6 +64,11 @@ namespace Dados_do_Cliente.Formularios
         private void mskData_Click(object sender, EventArgs e)
         {
            mskData.SelectionStart = 0;
+        }
+
+        private void frmProduto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

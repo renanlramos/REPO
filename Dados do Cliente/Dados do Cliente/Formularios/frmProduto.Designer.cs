@@ -190,20 +190,20 @@
             // tstdSalvar
             // 
             this.tstdSalvar.Name = "tstdSalvar";
-            this.tstdSalvar.Size = new System.Drawing.Size(152, 22);
+            this.tstdSalvar.Size = new System.Drawing.Size(124, 22);
             this.tstdSalvar.Text = "&Salvar";
             this.tstdSalvar.Click += new System.EventHandler(this.tstdSalvar_Click);
             // 
             // tstbExcluir
             // 
             this.tstbExcluir.Name = "tstbExcluir";
-            this.tstbExcluir.Size = new System.Drawing.Size(152, 22);
+            this.tstbExcluir.Size = new System.Drawing.Size(124, 22);
             this.tstbExcluir.Text = "&Excluir";
             // 
             // tstbPesquisar
             // 
             this.tstbPesquisar.Name = "tstbPesquisar";
-            this.tstbPesquisar.Size = new System.Drawing.Size(152, 22);
+            this.tstbPesquisar.Size = new System.Drawing.Size(124, 22);
             this.tstbPesquisar.Text = "&Pesquisar";
             // 
             // toolStripSeparator1
@@ -245,6 +245,7 @@
             this.Controls.Add(this.grpbCadastroDeProdutos);
             this.Name = "frmProduto";
             this.Text = "frmProduto";
+            this.Load += new System.EventHandler(this.frmProduto_Load);
             this.grpbCadastroDeProdutos.ResumeLayout(false);
             this.grpbCadastroDeProdutos.PerformLayout();
             this.toolStrip.ResumeLayout(false);

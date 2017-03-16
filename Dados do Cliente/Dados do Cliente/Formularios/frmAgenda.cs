@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using System.Data.SqlClient;
 
 namespace Dados_do_Cliente
 {
     public partial class frmAgenda : Form
     {
+
         public frmAgenda()
         {
             InitializeComponent();
@@ -138,6 +140,8 @@ namespace Dados_do_Cliente
 
                 MessageBox.Show("Cliente Incluído com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            limpar();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -156,6 +160,11 @@ namespace Dados_do_Cliente
         }
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            limpar();
+            
+        }
+        private void limpar()
         {
             txtBairro.Text = (" ");
             txtCidade.Text = (" ");
@@ -214,6 +223,74 @@ namespace Dados_do_Cliente
 
             //comando utilizado para gerar um efeito "zebrado" no datagridview
             dgvClientes.AlternatingRowsDefaultCellStyle.BackColor = Color.Green;
+        }
+
+        private void dgvClientes_DoubleClick(object sender, EventArgs e)
+        {
+            //verificar se existe itens na grid
+            if (dgvClientes.RowCount == 0)
+            {
+                return;
+            }
+
+            //carrega a tela com todos os dados do cliente
+            SqlDataReader drReader;
+            clClientes clClientes = new clClientes();
+            clClientes.banco = Properties.Settings.Default.conexaoDB;
+            drReader = clClientes.PesquisarCodigo(Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value));
+
+            if (drReader.Read())
+            {
+                //transfere os dados do banco de dados para os campos do formulário
+                txtCodigo.Text = drReader["cliCodigo"].ToString();
+                txtNome.Text = drReader["cliNome"].ToString();
+                txtEndereco.Text = drReader["cliNome"].ToString();
+                txtNumero.Text = drReader["cliNome"].ToString();
+                txtBairro.Text = drReader["cliNome"].ToString();
+                txtCidade.Text = drReader["cliNome"].ToString();
+                cboEstado.Text = drReader["cliNome"].ToString();
+                mskCelular.Text = drReader["cliNome"].ToString();
+                mskCEP.Text = drReader["cliNome"].ToString();
+
+                //habilita o frame e envia o cursor para o campo descrição
+                tabControl1.SelectedTab = tabPage2;
+                txtNome.Focus();
+            }
+            drReader.Close();
+        }
+
+        private void tstbExcluir_Click(object sender, EventArgs e)
+        {
+            //validação do conteudo
+            if (txtCodigo.Text == "")
+            {
+                return;
+            }
+            //pergunta para o usuario se ele confirma a exclusão do cadastro
+            DialogResult resposta;
+            resposta = MessageBox.Show("Confirma a exclusão do cliente?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (resposta.Equals(DialogResult.No))
+            {
+                return;
+            }
+
+            //instancia classe do negocio
+            clClientes clClientes = new clClientes();
+
+            //variavel com a string de conexão com o banco de dados
+            clClientes.banco = Properties.Settings.Default.conexaoDB;
+            clClientes.cliCodigo = Convert.ToInt32(txtCodigo.Text);
+            clClientes.Excluir();
+
+            //atualiza o datagridview
+            Pesquisar();
+
+            //limpar a tela
+
+            limpar();
+
+            //mensagem de confirmação de exclusão
+            MessageBox.Show("Cliente excluido com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

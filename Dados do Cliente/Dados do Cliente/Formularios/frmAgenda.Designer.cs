@@ -42,6 +42,7 @@
             this.tstLimpar = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.cboOpcao = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
@@ -67,14 +68,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errError)).BeginInit();
             this.toolStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // errError
@@ -112,20 +112,21 @@
             // tstdSalvar
             // 
             this.tstdSalvar.Name = "tstdSalvar";
-            this.tstdSalvar.Size = new System.Drawing.Size(124, 22);
+            this.tstdSalvar.Size = new System.Drawing.Size(152, 22);
             this.tstdSalvar.Text = "&Salvar";
             this.tstdSalvar.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
             // tstbExcluir
             // 
             this.tstbExcluir.Name = "tstbExcluir";
-            this.tstbExcluir.Size = new System.Drawing.Size(124, 22);
+            this.tstbExcluir.Size = new System.Drawing.Size(152, 22);
             this.tstbExcluir.Text = "&Excluir";
+            this.tstbExcluir.Click += new System.EventHandler(this.tstbExcluir_Click);
             // 
             // tstbPesquisar
             // 
             this.tstbPesquisar.Name = "tstbPesquisar";
-            this.tstbPesquisar.Size = new System.Drawing.Size(124, 22);
+            this.tstbPesquisar.Size = new System.Drawing.Size(152, 22);
             this.tstbPesquisar.Text = "&Pesquisar";
             // 
             // toolStripSeparator1
@@ -165,7 +166,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(795, 262);
+            this.tabControl1.Size = new System.Drawing.Size(795, 301);
             this.tabControl1.TabIndex = 23;
             // 
             // tabPage1
@@ -178,10 +179,19 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(787, 236);
+            this.tabPage1.Size = new System.Drawing.Size(787, 275);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pesquisar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(10, 51);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(765, 218);
+            this.dgvClientes.TabIndex = 5;
+            this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
             // 
             // txtFiltro
             // 
@@ -228,7 +238,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(787, 236);
+            this.tabPage2.Size = new System.Drawing.Size(787, 275);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dados do Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -445,14 +455,6 @@
             this.txtNumero.Size = new System.Drawing.Size(78, 22);
             this.txtNumero.TabIndex = 5;
             // 
-            // dgvClientes
-            // 
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(10, 51);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(765, 179);
-            this.dgvClientes.TabIndex = 5;
-            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,10 +474,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

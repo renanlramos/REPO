@@ -8,33 +8,39 @@ using System.Web.UI.WebControls;
 
 public partial class Cadastrar : System.Web.UI.Page
 {
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
 
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {
-        using (SqlConnection con = new SqlConnection("Server=AME0556343W10-1\\SQLEXPRESS;Database=db_google;Trusted_Connection=Yes;"))
+        using(SqlConnection con  = new SqlConnection("Server=AME0556343W10-1\\SQLEXPRESS;Database=DB_GOOGLE;Trusted_Connection=Yes"))
         {
-            using (SqlCommand cmd = new SqlCommand("Insert into tb_posts (titulo, autor, conteudo) VALUES (@titulo, @autor, @conteudo)", con))
+            using(SqlCommand cmd = new SqlCommand("INSERT INTO TB_POSTS (TITULO, AUTOR, CONTEUDO) VALUES (@TIT, @AUT, @CON)", con))
             {
-                cmd.Parameters.AddWithValue("titulo", txtbTitulo.Text);
-                cmd.Parameters.AddWithValue("autor", txtbAutor.Text);
-                cmd.Parameters.AddWithValue("conteudo", txtbConteudo.Text);
+                cmd.Parameters.AddWithValue("TIT", txtTitulo.Text);
+                cmd.Parameters.AddWithValue("AUT", txtAutor.Text);
+                cmd.Parameters.AddWithValue("CON", txtConteudo.Text);
+
                 try
                 {
                     con.Open();
-                    if (cmd.ExecuteNonQuery() > -1)
+                    if(cmd.ExecuteNonQuery() > -1)
                     {
-                        lblMensagem.Text = "Post cadastrado com sucesso.";
+                        lblMensagem.Text = "Post cadastrado com sucesso";
                     }
                 }
                 catch (Exception ex)
                 {
-                    lblMensagem.Text = "Erro ao Cadastrar o Post.\n" + ex.Message;
-                }
-                finally
-                {
-                    con.Close();
-                }
+                    lblMensagem.Text = "Houve algum problema: " + ex;
                 }
             }
         }
     }
+
+    protected void lblMensagem_Load(object sender, EventArgs e)
+    {
+
+    }
+}

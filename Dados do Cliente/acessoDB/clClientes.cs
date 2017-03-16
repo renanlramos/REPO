@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace Negocio
 {
     public class clClientes
@@ -96,7 +97,7 @@ namespace Negocio
             StringBuilder strQuery = new StringBuilder();
 
             //montagem do delete
-            strQuery.Append(" DELETE FROM tbCliente s");
+            strQuery.Append(" DELETE FROM tbClientes");
             strQuery.Append(" WHERE ");
             strQuery.Append(" cliCodigo = " + cliCodigo);
 
@@ -131,7 +132,7 @@ namespace Negocio
             StringBuilder strQuery = new StringBuilder();
 
             //montagem do select
-            strQuery.Append(" SELECT ");
+            strQuery.Append(" SELECT * ");
             strQuery.Append(" FROM tbClientes ");
             strQuery.Append(" WHERE ");
             strQuery.Append(" cliCodigo = " + cliCodigo);
